@@ -39,5 +39,10 @@ namespace DemoEgor2024.Pages
                 ServiceWpar.Children.Add(new ServiceUserControl(item, OnItemRemoved));
             }
         }
+
+        private void Button_Click_AddService(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Pages.AddService());
+        }
     }
 }

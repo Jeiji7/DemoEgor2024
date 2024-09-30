@@ -41,7 +41,7 @@ namespace DemoEgor2024.Controls
             //Заменяем обратные слеши на прямые слеши
             ImageService.Source = new BitmapImage(new Uri(fullPath, UriKind.Absolute));
 
-            if (ser.Discount != null)
+            if (ser.Discount != 0)
             {
                 //Зачёркнутый текст
                 textDecorate.Text = $"{ser.Cost.Value.ToString("0.#")}";

@@ -24,7 +24,9 @@ namespace DemoEgor2024.Pages
     public partial class EditService : Page
     {
         private Service ser;
+        private ServicePhoto serPhoto;
         private string selectedImagePath;
+        public string folderName = "Услуги школы";
         int charactersToRemove = 61; // Количество символов для удаления в начале строки
         public EditService(Service service)
         {
@@ -68,11 +70,17 @@ namespace DemoEgor2024.Pages
             {
 
                 selectedImagePath = openFileDialog.FileName;
-                if (!string.IsNullOrEmpty(selectedImagePath) && selectedImagePath.Length >= charactersToRemove)
+
+                // Ищем индекс папки "Услуги школы" и обрезаем строку
+                int index = selectedImagePath.IndexOf(folderName);
+
+                if (index != -1)
                 {
-                    selectedImagePath = selectedImagePath.Substring(charactersToRemove);
+                    string result = selectedImagePath.Substring(index);
+                    selectedImagePath = result;
                 }
                 ImageService.Source = new BitmapImage(new Uri(openFileDialog.FileName));
+
             }
         }
 
