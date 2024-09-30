@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DemoEgor2024"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+         Title="Scholl Service" MaxHeight="1080" MaxWidth="720" MinHeight="1080" MinWidth="720" Icon="Resource/school_logo.ico">
     <Grid>
-        
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
 </Window>
